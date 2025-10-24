@@ -1,4 +1,4 @@
-import { Console } from "@woowacourse/mission-utils";
+import { Console, MissionUtils } from "@woowacourse/mission-utils";
 class App {
   async run() {
     let racingCars = []; // 경주할 자동차 이름을 저장할 배열
@@ -6,10 +6,9 @@ class App {
     const input = await Console.readLineAsync(
       "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)\n"
     );
-    Console.print(input);
-    if (isNaN(input)) {
-      throw new Error("[ERROR] 시도할 횟수는 숫자값이 아닙니다.");
-    }
+    // if (isNaN(input)) {
+    //   throw new Error("[ERROR] 시도할 횟수는 숫자값이 아닙니다.");
+    // }
     if (!input.includes(",")) {
       throw new Error("[ERROR] 자동차 이름은 쉼표(,)로 구분해야 합니다.");
     }
@@ -29,9 +28,21 @@ class App {
         throw new Error("[ERROR] 자동차 이름이 중복되었습니다.");
       }
     });
+    let racinCarsStatus = new Array(racingCars.length).fill(0); // 경주할 자동차 상태를 저장할 배열
     tryCount = await Console.readLineAsync("시도할 횟수는 몇 회인가요?\n");
     if (isNaN(tryCount)) {
       throw new Error("[ERROR] 시도할 횟수는 숫자값이 아닙니다.");
+    }
+
+    for (let i = 0; i < tryCount; i++) {
+      racingCars.map((car, index) => {
+        const randomNumber = MissionUtils.Random.pickNumberInRange(0, 9);
+        if (randomNumber >= 4) {
+          racinCarsStatus[index] += 1;
+        }
+        Console.print(`${car} : ${"-".repeat(racinCarsStatus[index])}`);
+      });
+      Console.print("\n");
     }
   }
 }
