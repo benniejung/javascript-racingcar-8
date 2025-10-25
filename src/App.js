@@ -61,6 +61,20 @@ class App {
       });
       Console.print("\n");
     }
+
+    const maxMoveCount = Math.max(
+      ...racingCars.map((car) => car.getMoveCount())
+    );
+
+    const winners = racingCars
+      .filter((car) => car.getMoveCount() === maxMoveCount)
+      .map((car) => car.getName());
+
+    if (winners.length === 1) {
+      Console.print(`최종 우승자 : ${winners[0]}`);
+    } else {
+      Console.print(`최종 우승자 : ${winners.join(", ")}`);
+    }
   }
 }
 
