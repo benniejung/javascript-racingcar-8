@@ -8,15 +8,19 @@ export default class View {
   inputTryCount() {
     return Console.readLineAsync(PRINT_MESSAGE.INPUT_TRY_COUNT);
   }
+  printSingleTurn(racingCars) {
+    racingCars.forEach((racingCar) => {
+      racingCar.move();
+      racingCar.print();
+    });
+    Console.print("\n");
+  }
   printRacingProcess(racingCars, tryCount) {
     Console.print(PRINT_MESSAGE.RACING_PROCESS);
     for (let i = 0; i < tryCount; i++) {
-      racingCars.forEach((racingCar) => {
-        racingCar.move();
-        racingCar.print();
-      });
-      Console.print("\n");
+      this.printSingleTurn(racingCars);
     }
+    return;
   }
   printRacingResult(racingCars) {
     // 최대 이동 횟수 계산
