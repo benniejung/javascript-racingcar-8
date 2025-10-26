@@ -1,8 +1,11 @@
 import { ERROR_MESSAGE } from "./constants.js";
 
 const validateInputCarNames = (inputCarNames) => {
-  if (inputCarNames.length === 0) {
+  if (typeof inputCarNames !== "string") {
     throw new Error(ERROR_MESSAGE.INPUT_CAR_NAMES);
+  }
+  if (inputCarNames.length === 0) {
+    throw new Error(ERROR_MESSAGE.INPUT_CAR_NAMES_EMPTY);
   }
   if (!inputCarNames.includes(",")) {
     throw new Error(ERROR_MESSAGE.INPUT_CAR_NAMES_SEPARATOR);
@@ -10,9 +13,6 @@ const validateInputCarNames = (inputCarNames) => {
 };
 
 const validateCarNames = (racingCars) => {
-  if (racingCars.some((car) => car.name != String(car.name))) {
-    throw new Error(ERROR_MESSAGE.INVALID_CAR_NAME);
-  }
   if (racingCars.length < 2) {
     throw new Error(ERROR_MESSAGE.INVALID_CAR_COUNT);
   }

@@ -7,9 +7,15 @@ import { ERROR_MESSAGE } from "../src/utils/constants.js";
 
 describe("입력 검증 테스트", () => {
   describe("validateInputCarNames", () => {
+    test("입력 값이 문자열이 아닐 때 에러 발생", () => {
+      expect(() => validateInputCarNames(123)).toThrow(
+        ERROR_MESSAGE.INPUT_CAR_NAMES
+      );
+    });
+
     test("빈 문자열 입력 시 에러 발생", () => {
       expect(() => validateInputCarNames("")).toThrow(
-        ERROR_MESSAGE.INPUT_CAR_NAMES
+        ERROR_MESSAGE.INPUT_CAR_NAMES_EMPTY
       );
     });
 
@@ -25,15 +31,8 @@ describe("입력 검증 테스트", () => {
   });
 
   describe("validateCarNames", () => {
-    test("자동차 이름이 문자열이 아닐 때 에러 발생", () => {
-      const racingCars = [{ name: null }, { name: "woni" }];
-      expect(() => validateCarNames(racingCars)).toThrow(
-        ERROR_MESSAGE.INVALID_CAR_NAME
-      );
-    });
-
     test("자동차 개수가 2개 미만일 때 에러 발생", () => {
-      const racingCars = [{ name: "pobi" }];
+      const racingCars = [{ name: "pobi," }];
       expect(() => validateCarNames(racingCars)).toThrow(
         ERROR_MESSAGE.INVALID_CAR_COUNT
       );

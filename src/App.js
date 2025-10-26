@@ -1,5 +1,5 @@
 import Controller from "./controller/controller.js";
-import View from "./view/View.js";
+import View from "./view/view.js";
 import RacingCar from "./model/RacingCar.js";
 
 class App {
