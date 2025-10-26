@@ -26,7 +26,7 @@ const validateCarNames = (racingCars) => {
 };
 
 const validateTryCount = (tryCount) => {
-  if (tryCount != Number(tryCount)) {
+  if (isNaN(tryCount) || tryCount <= 0) {
     throw new Error(ERROR_MESSAGE.INPUT_TRY_COUNT);
   }
 };
