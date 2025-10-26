@@ -1,4 +1,5 @@
 import { ERROR_MESSAGE } from "./constants.js";
+
 const validateInputCarNames = (inputCarNames) => {
   if (inputCarNames.length === 0) {
     throw new Error(ERROR_MESSAGE.INPUT_CAR_NAMES);
