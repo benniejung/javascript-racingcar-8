@@ -2,7 +2,7 @@ import {
   validateInputCarNames,
   validateCarNames,
   validateTryCount,
-} from "../utils/Validation.js";
+} from "../utils/validation.js";
 
 export default class Controller {
   constructor(view, model) {
