@@ -1,29 +1,12 @@
-import { Console, MissionUtils } from "@woowacourse/mission-utils";
+import Controller from "./controller/controller.js";
+import View from "./view/View.js";
+import RacingCar from "./model/RacingCar.js";
 
-class RacingCar {
-  constructor(name) {
-    this.name = name; // 자동차 이름
-    this.moveCount = 0; // 자동차 전진횟수
-  }
-  move() {
-    const randomNumber = MissionUtils.Random.pickNumberInRange(0, 9);
-    if (randomNumber >= 4) {
-      this.moveCount += 1;
-    }
-  }
-  print() {
-    Console.print(`${this.name} : ${"-".repeat(this.moveCount)}`);
-  }
-  getMoveCount() {
-    return this.moveCount;
-  }
-  getName() {
-    return this.name;
-  }
-}
 class App {
   async run() {
-    let tryCount = 0;
+    const controller = new Controller(new View(), new RacingCar());
+    controller.gameStart();
+    /*     let tryCount = 0;
     const input = await Console.readLineAsync(
       "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)\n"
     );
@@ -74,7 +57,7 @@ class App {
       Console.print(`최종 우승자 : ${winners[0]}`);
     } else {
       Console.print(`최종 우승자 : ${winners.join(", ")}`);
-    }
+    } */
   }
 }
 
