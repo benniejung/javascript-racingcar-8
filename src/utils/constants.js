@@ -3,7 +3,7 @@ const PRINT_MESSAGE = {
     "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)\n",
   INPUT_TRY_COUNT: "시도할 횟수는 몇 회인가요?\n",
   RACING_PROCESS: "\n실행 결과",
-  FINAL_WINNERS: "최종 우승자 : ",
+  FINAL_WINNERS: "최종 우승자 :",
 };
 
 const ERROR_MESSAGE = {
@@ -13,7 +13,7 @@ const ERROR_MESSAGE = {
   INVALID_CAR_NAME: "[ERROR] 자동차 이름은 문자열이어야 합니다.",
   INVALID_CAR_COUNT: "[ERROR] 자동차 개수는 최소 2개 이상이어야 합니다.",
   INVALID_CAR_NAMES_LENGTH:
-    "[ERROR] 자동차 이름은 5자 이하이거나 공백일 수 없습니다.",
+    "[ERROR] 자동차 이름은 5자 이상이거나 공백일 수 없습니다.",
   INVALID_DUPLICATE_CAR_NAMES: "[ERROR] 자동차 이름이 중복되었습니다.",
 };
 

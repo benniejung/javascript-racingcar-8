@@ -5,7 +5,7 @@ import RacingCar from "./model/RacingCar.js";
 class App {
   async run() {
     const controller = new Controller(new View(), new RacingCar());
-    controller.gameStart();
+    await controller.gameStart();
   }
 }
 
