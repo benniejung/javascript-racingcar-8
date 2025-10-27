@@ -2,7 +2,7 @@ import {
   validateInputCarNames,
   validateCarNames,
   validateTryCount,
-} from "../utils/validation.js";
+} from "../utils/Validation.js";
 import { Console } from "@woowacourse/mission-utils";
 
 export default class Controller {
