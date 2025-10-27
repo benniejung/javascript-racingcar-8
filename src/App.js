@@ -1,4 +1,4 @@
-import Controller from "./controller.js";
+import Controller from "./Controller.js";
 import View from "./View.js";
 import RacingCar from "./RacingCar.js";
 
