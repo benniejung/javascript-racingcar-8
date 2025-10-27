@@ -1,6 +1,6 @@
-import Controller from "./controller/controller.js";
-import View from "./view/view.js";
-import RacingCar from "./model/RacingCar.js";
+import Controller from "./controller.js";
+import View from "./View.js";
+import RacingCar from "./RacingCar.js";
 
 class App {
   async run() {

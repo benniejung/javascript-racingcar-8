@@ -1,5 +1,5 @@
 import { Console } from "@woowacourse/mission-utils";
-import { PRINT_MESSAGE } from "../utils/constants.js";
+import { PRINT_MESSAGE } from "./constants.js";
 
 export default class View {
   inputCarNames() {

@@ -2,8 +2,8 @@ import {
   validateInputCarNames,
   validateCarNames,
   validateTryCount,
-} from "../src/utils/Validation.js";
-import { ERROR_MESSAGE } from "../src/utils/constants.js";
+} from "../src/Validation.js";
+import { ERROR_MESSAGE } from "../src/constants.js";
 
 describe("입력 검증 테스트", () => {
   describe("validateInputCarNames", () => {
