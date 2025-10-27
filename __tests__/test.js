@@ -3,7 +3,7 @@ import {
   validateCarNames,
   validateTryCount,
 } from "../src/Validation.js";
-import { ERROR_MESSAGE } from "../src/constants.js";
+import { ERROR_MESSAGE } from "../src/Constants.js";
 
 describe("입력 검증 테스트", () => {
   describe("validateInputCarNames", () => {
